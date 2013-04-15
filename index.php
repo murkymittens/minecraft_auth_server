@@ -70,6 +70,24 @@ if(isset($_GET['action'])) {
 				echo "Not cool bro";	
 			}
 		break;
+		case "getskin":
+			$username = strtolower(varex('user'));
+			$skin = "./skins/{$username}.png";
+			if(file_exists($skin)) {
+				header("Location: $skin");
+			} else {
+				header("Location: ./skins/default_player_skin.png");
+			}
+		break;
+		case "getcape":
+			$username = strtolower(varex('user'));
+			$cape = "./capes/{$username}.png";
+			if(file_exists($cape)) {
+				header("Location: $cape");
+			} else {
+				header("Location: ./capes/default_player_cape.png");
+			}
+		break;
 	}	
 }
 
