@@ -18,7 +18,7 @@ class Minecraft {
 		if(sha1($password) == $result['password']) {
 			return TRUE;
 		} else {
-			return FALSE: // Passwords don't match
+			return FALSE; // Passwords don't match
 		}
 	}
 	
@@ -33,7 +33,7 @@ class Minecraft {
 		if($sessionId == $result['id']) {
 			return TRUE;
 		} else {
-			return FALSE: // Someone's trying to session hijack; or my script screwed up
+			return FALSE; // Someone's trying to session hijack; or my script screwed up
 		}
 	}
 	
