@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 class Minecraft {
 	private $db;
@@ -66,7 +66,7 @@ class Minecraft {
 	}
 	
 	public function verifyServerJoinRequest($username, $serverId) {
-		$query = $this->db->prepare("SELECT `serverId` FROM `server_joins` WHERE `username`=:username LIMIT 1");
+		$query = $this->db->prepare("SELECT `server_id` FROM `server_joins` WHERE `username`=:username LIMIT 1");
 		$query->bindValue(":username", $username, PDO::PARAM_STR);
 		$query->execute();
 		$result = $query->fetch(PDO::FETCH_ASSOC);

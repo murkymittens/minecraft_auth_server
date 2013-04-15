@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // Launcher authentication
 // REQUEST[POST]: https://login.minecraft.net/?user=<username>&password=<password>&version=<launcher version>
@@ -74,18 +74,18 @@ if(isset($_GET['action'])) {
 		break;
 		case "getskin":
 			$username = strtolower(varex('user'));
-			$skin = BASE_URL . "/skins/{$username}.png";
+			$skin = "skins/{$username}.png";
 			if(file_exists($skin)) {
-				header("Location: $skin");
+				header("Location: " . BASE_URL . "/$skin");
 			} else {
 				header("Location: " . BASE_URL . "/skins/default_player_skin.png");
 			}
 		break;
 		case "getcape":
 			$username = strtolower(varex('user'));
-			$cape = BASE_URL . "/capes/{$username}.png";
+			$cape = "capes/{$username}.png";
 			if(file_exists($cape)) {
-				header("Location: $cape");
+				header("Location: " . BASE_URL . "/$cape");
 			} else {
 				header("Location: " . BASE_URL . "/capes/default_player_cape.png");
 			}
