@@ -41,7 +41,7 @@ if(isset($_GET['action'])) {
 		case "login":
 			$username = varex('user');
 			$password = varex('password');
-			if($minecraft->authenticateUser($username, $password)) {
+			if($minecraft->authenticateUserPassword($username, $password)) {
 				echo $minecraft->getGameVersion() . ":deprecated:{$username}:" . $minecraft->generateSessionId($username) . 
 					":" . $minecraft->generateUserId($username);
 			} else {
