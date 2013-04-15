@@ -1,0 +1,8 @@
+﻿RewriteEngine On
+RewriteBase /
+
+RewriteRule ^MinecraftSkins/(.*)\.png$ index.php?action=getskin&user=$1
+RewriteRule ^MinecraftCloaks/(.*)\.png$ index.php?action=getcape&user=$1
+RewriteRule ^login$ index.php?action=login [QSA]
+RewriteRule ^game/joinserver\.jsp$ index.php?action=joinserver [QSA]
+RewriteRule ^game/checkserver\.jsp$ index.php?action=checkserver [QSA]

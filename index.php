@@ -17,6 +17,8 @@
 // REQUEST[GET]: http://session.minecraft.net/game/checkserver.jsp?user=<username>&serverId=<server hash>
 // RESPONSE: YES
 
+define("BASE_URL", "http://localhost");
+
 include("Minecraft.class.php");
 
 $database = new PDO("mysql:host=localhost;dbname=minecraft;charset=utf8", "root", "");
@@ -72,20 +74,20 @@ if(isset($_GET['action'])) {
 		break;
 		case "getskin":
 			$username = strtolower(varex('user'));
-			$skin = "./skins/{$username}.png";
+			$skin = BASE_URL . "/skins/{$username}.png";
 			if(file_exists($skin)) {
 				header("Location: $skin");
 			} else {
-				header("Location: ./skins/default_player_skin.png");
+				header("Location: " . BASE_URL . "/skins/default_player_skin.png");
 			}
 		break;
 		case "getcape":
 			$username = strtolower(varex('user'));
-			$cape = "./capes/{$username}.png";
+			$cape = BASE_URL . "/capes/{$username}.png";
 			if(file_exists($cape)) {
 				header("Location: $cape");
 			} else {
-				header("Location: ./capes/default_player_cape.png");
+				header("Location: " . BASE_URL . "/capes/default_player_cape.png");
 			}
 		break;
 	}	
